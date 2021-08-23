@@ -72,8 +72,8 @@
       $query  = "UPDATE prm_kontrakan SET ";
       $query .= "nm_kontrakan = '$nama', pemilik = '$pemilik', no_handphone = '$nohp', ";
       $query .= "alamat = '$alamat', harga = '$harga',";
-      $query .= "gambar = '$NewImageName', status = '$status', lat = '$lat', long = '$long' ";
-      $query .= "WHERE id = '$id' ";
+      $query .= "gambar = '$NewImageName', lat = '$lat', longit = '$long', status = '$status' ";
+      $query .= "WHERE id = $id ";
       
       if (mysqli_query($conn, $query)) {
         echo json_encode(array("statusCode"=>200));
