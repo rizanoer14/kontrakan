@@ -18,6 +18,11 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="../index.php" role="button">
+          <i class="">Logout</i>
+        </a>
+      </li>
       
     </ul>
 </nav>

@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -36,14 +36,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Karyawan</h1>
+            <h1>Dashboard</h1>
           </div>
-          <div class="col-sm-6">
+          <!-- <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">DataTables</li>
             </ol>
-          </div>
+          </div> -->
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -58,7 +58,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <?php
-                  $query = "SELECT * FROM prm_karyawan ORDER BY nm_karyawan ASC";
+                  $query = "SELECT * FROM prm_kontrakan WHERE status != 'tidak tersedia' ";
                   $result = mysqli_query($conn, $query);
                   //mengecek apakah ada error ketika menjalankan query
                   if(!$result){
@@ -69,12 +69,12 @@
                 ?>
                 <h3><?php echo "$totalRow";?></h3>
 
-                <p>New Orders</p>
+                <p>Kontrakan kosong</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="http://localhost/kontrakan/transaksi/index.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -82,14 +82,24 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <?php
+                  $query = "SELECT * FROM trx_kontrakan ";
+                  $result = mysqli_query($conn, $query);
+                  //mengecek apakah ada error ketika menjalankan query
+                  if(!$result){
+                    die ("Query Error: ".mysqli_errno($conn).
+                       " - ".mysqli_error($conn));
+                  }
+                  $totalRow = mysqli_num_rows($result);
+                ?>
+                <h3><?php echo "$totalRow";?></h3>
 
-                <p>Bounce Rate</p>
+                <p>Total Tersewa</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="http://localhost/kontrakan/datasewa/index.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -97,14 +107,24 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+              <?php
+                  $query = "SELECT * FROM prm_kontrakan ";
+                  $result = mysqli_query($conn, $query);
+                  //mengecek apakah ada error ketika menjalankan query
+                  if(!$result){
+                    die ("Query Error: ".mysqli_errno($conn).
+                       " - ".mysqli_error($conn));
+                  }
+                  $totalRow = mysqli_num_rows($result);
+                ?>
+                <h3><?php echo "$totalRow";?></h3>
 
-                <p>User Registrations</p>
+                <p>Total Kontrakan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="http://localhost/kontrakan/datakontrakan/index.php" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
         </div>

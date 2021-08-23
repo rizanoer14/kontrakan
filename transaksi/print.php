@@ -57,18 +57,27 @@
       th, td{
          border: 1px solid #3c3c3c;
          padding: 5px 8px;
-
       }
       table {
             border: 1px solid black;
             margin-left: auto;  
-            margin-right: auto;  
+            margin-right: auto;
+            width: 600px;  
         }
       .heading-style-with-line {
          border-bottom: 1px solid #ddd;
          font-weight: normal;
          padding-bottom: 0.5em;
          text-align: center;
+      }
+      .petugas {
+         width: 600px;
+         text-align: right;
+      }
+      .namaPetugas {
+         margin-bottom: 25px;
+         margin-top: 25px;
+         margin-right: 50px;
       }
    </style>
    <h2 class="heading-style-with-line">KWITANSI PENYEWAAN KONTRAKAN</h2>
@@ -106,8 +115,10 @@
 <table class='petugas'>
    <tr>
       <td>
-         tes
+         <div class='namaPetugas'>Petugas</div>
+         <div class='namaPetugas'>..............</div>
       </td>
+
    </tr>
 </table>
 <script>

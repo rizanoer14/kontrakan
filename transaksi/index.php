@@ -105,7 +105,7 @@
 
                       // membuat link untuk mengedit dan menghapus data
                       echo '<td>
-                        <a href="edit.php?id='.$data['id'].'" <button type="button" class="btn btn-primary">Sewa</button></a>
+                        <a href="sewa.php?id='.$data['id'].'" <button type="button" class="btn btn-primary">Sewa</button></a>
                       </td>';
                       echo "</tr>";
                       $no++; // menambah nilai nomor urut
